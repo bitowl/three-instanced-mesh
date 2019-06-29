@@ -12,4 +12,20 @@ module.exports = function( THREE ){
 	THREE.ShaderChunk[ 'defaultnormal_vertex' ] = 		require('./defaultnormal_vertex.glsl.js');
 	THREE.ShaderChunk[ 'uv_pars_vertex' ] = 			require('./uv_pars_vertex.glsl.js');
 	
+	// patches the matcap shaders
+	THREE.ShaderLib.matcap = {
+		uniforms: THREE.UniformsUtils.merge([
+			THREE.UniformsLib.common,
+			THREE.UniformsLib.bumpmap,
+			THREE.UniformsLib.normalmap,
+			THREE.UniformsLib.displacementmap,
+			THREE.UniformsLib.fog,
+			{
+				matcap: { value: null }
+			}
+		]),
+	
+		vertexShader: require('./meshmatcap_vert.glsl.js'),
+		fragmentShader: require('./meshmatcap_frag.glsl.js')
+	};
 }

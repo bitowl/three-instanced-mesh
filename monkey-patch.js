@@ -8,8 +8,6 @@ module.exports = function ( THREE ){
 
 	require('./monkey-patch/index.js')( THREE );
 
-	THREE.REVISION += "_InstancedMesh";
-
 	return THREE;
 
 }

@@ -2,13 +2,13 @@
  * Dusan Bosnjak @pailhead
  **************************/
 
-module.exports = function ( THREE ){
+module.exports = function (THREE) {
 
-	if( /InstancedMesh/.test( THREE.REVISION ) ) return THREE;
+	if (THREE.monkeyPatchApplied) return THREE;
 
-	require('./monkey-patch/index.js')( THREE );
+	require('./monkey-patch/index.js')(THREE);
 
-	THREE.REVISION += "_InstancedMesh";
+	THREE.monkeyPatchApplied = true;
 
 	return THREE;
 

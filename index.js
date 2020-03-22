@@ -383,7 +383,7 @@ module.exports = function (THREE) {
 				attribute.normalized = a[2]
 			}
 
-			attribute.dynamic = this._dynamic
+			attribute.setUsage(this._dynamic ? THREE.DynamicDrawUsage : THREE.StaticDrawUsage)
 			this.geometry.setAttribute(name, attribute)
 		})
 

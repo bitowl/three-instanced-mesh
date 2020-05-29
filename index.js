@@ -51,7 +51,10 @@ module.exports = function (THREE) {
 		uniformScale
 	) {
 
-		THREE.Mesh.call(this, (new THREE.InstancedBufferGeometry()).copy(bufferGeometry)); //hacky for now
+		const instancedBufferGeometry = new THREE.InstancedBufferGeometry();
+		// We need to call the copy function of BufferGeometry instead of the one of InstancedBufferGeometry, so it does not mess with the default value of instanceCount
+		THREE.BufferGeometry.prototype.copy.call(instancedBufferGeometry, bufferGeometry);
+		THREE.Mesh.call(this, instancedBufferGeometry); //hacky for now
 
 		this._dynamic = !!dynamic; //TODO: set a bit mask for different attributes?
 

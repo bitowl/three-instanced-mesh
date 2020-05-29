@@ -1,5 +1,7 @@
 # three-instanced-mesh
 
+Fork of https://github.com/pailhead/three-instanced-mesh that is updated for three.js r117.
+
 Higher level abstraction of `THREE.InstancedBufferGeometry` for [three.js](https://github.com/mrdoob/three.js/). For a webgl level overview check out [TojiCode](http://blog.tojicode.com/2013/07/webgl-instancing-with.html). For a more in depth overview on how this works, [i've written an article more or less on how to build this from scratch](https://medium.com/@pailhead011/instancing-with-three-js-36b4b62bc127).
 
 ## note

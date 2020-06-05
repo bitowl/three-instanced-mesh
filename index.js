@@ -64,7 +64,8 @@ module.exports = function (THREE) {
 
 		this.numInstances = numInstances;
 
-		this._setAttributes();
+		// this is already called in the setter of numInstances
+		//this._setAttributes();
 
 		/**
 		 * use the setter to decorate this material
@@ -146,6 +147,7 @@ module.exports = function (THREE) {
 			set: function (v) {
 
 				this._numInstances = v;
+				this._geometry._maxInstanceCount = v;
 
 				//reset buffers
 

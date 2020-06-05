@@ -12,6 +12,7 @@ declare interface ThreeInstancedMesh extends THREE.Mesh {
     colors: boolean,
     uniformScale: boolean): ThreeInstancedMesh;
 
+  numInstances: number;
   setPositionAt(index: number, position: THREE.Vector3): void;
   setQuaternionAt(index: number, quat: THREE.Quaternion): void;
   setScaleAt(index: number, scale: THREE.Vector3): void;

@@ -1,6 +1,6 @@
 {
   "name": "@bitowl/three-instanced-mesh",
-  "version": "0.117.0",
+  "version": "0.117.1",
   "description": "Scene graph level abstraction for three.js InstancedBufferGeometry",
   "main": "index.js",
   "types": "index.d.ts",
